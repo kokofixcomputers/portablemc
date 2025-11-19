@@ -191,7 +191,7 @@ class Environment:
     def run(self, runner: "Optional[Runner]" = None) -> None:
         """Run this game's environment, with an optional custom runner.
         """
-        (runner or StandardRunner()).run(self)
+        return (runner or StandardRunner()).run(self)
 
 class Runner:
     """Base class handling game running, this default implementation just create a
@@ -1598,8 +1598,7 @@ class StandardRunner(Runner):
                 *replace_list_vars(env.game_args, replacements)
             ], env.context.work_dir)
 
-            if process is not None:
-                self.process_wait(process)
+            return process
 
         finally:
             # Any error while setting up the binary directory cause it to be deleted.
