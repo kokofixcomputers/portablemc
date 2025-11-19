@@ -6,8 +6,8 @@ the API and examples codes. You should also read the API documentation about
 public API, and therefore stable across minor and patch version bumps.
 """
 
-LAUNCHER_NAME = "portablemc"
-LAUNCHER_VERSION = "4.4.1"
+LAUNCHER_NAME = "betterportablemc"
+LAUNCHER_VERSION = "4.4.2"
 LAUNCHER_AUTHORS = ["Théo Rozier <contact@theorozier.fr>", "kokofixcomputers", "Contributors"]
 LAUNCHER_COPYRIGHT = "PortableMC  Copyright (C) 2021-2024  Théo Rozier"
 LAUNCHER_URL = "https://github.com/kokofixcomputers/portablemc"
