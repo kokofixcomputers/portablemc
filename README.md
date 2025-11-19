@@ -1,11 +1,12 @@
-# Portable Minecraft Launcher
+# Better PortableMC
+### Better PortableMC, is a un-official fork of the original PortableMC. Made by kokofixcomputers, it's intention is to improve on PortableMC and add features/fix bugs.
 A fast, reliable and cross-platform command-line Minecraft launcher and API for developers.
 Including fast and easy installation of common mod loaders such as Fabric, Forge, NeoForge and Quilt.
 This launcher is compatible with the standard Minecraft directories. 
 
 [![PyPI - Version](https://img.shields.io/pypi/v/portablemc?label=PyPI%20version&style=flat-square)![PyPI - Downloads](https://img.shields.io/pypi/dm/portablemc?label=PyPI%20downloads&style=flat-square)](https://pypi.org/project/portablemc/)
 
-![illustration](https://github.com/mindstorm38/portablemc/blob/main/doc/illustration.png)
+![illustration](https://github.com/kokofixcomputers/portablemc/blob/main/doc/illustration.png)
 
 *This launcher is tested for Python 3.8, 3.9, 3.10, 3.11, 3.12.*
 
@@ -42,7 +43,7 @@ use `pip3` instead of `pip` in order to run it on Python 3. You can also use
 `python -m pip` if the `pip` command is not in the path and the python executable is.
 
 ```sh
-pip install --user portablemc[certifi]
+pip install --user betterportablemc[certifi]
 ```
 
 After that, you can try to show the launcher help message using `portablemc` in your 
