@@ -3,15 +3,15 @@ requires = ["poetry_core>=1.2.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "portablemc"
-version = "4.4.1"
+name = "betterportablemc"
+version = "4.4.2"
 description = "PortableMC is a module that provides both an API for development of your custom launcher and an executable script to run PortableMC CLI."
-authors = ["Théo Rozier <contact@theorozier.fr>"]
+authors = ["Théo Rozier <contact@theorozier.fr>", "kokofixcomputers"]
 license = "GPL-3.0-only"
 readme = "README.md"
-homepage = "https://github.com/mindstorm38/portablemc"
-repository = "https://github.com/mindstorm38/portablemc"
-documentation = "https://github.com/mindstorm38/portablemc"
+homepage = "https://github.com/kokofixcomputers/portablemc"
+repository = "https://github.com/kokofixcomputers/portablemc"
+documentation = "https://github.com/kokofixcomputers/portablemc"
 keywords = ["minecraft", "launcher", "portable", "cli"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
