@@ -43,7 +43,7 @@ use `pip3` instead of `pip` in order to run it on Python 3. You can also use
 `python -m pip` if the `pip` command is not in the path and the python executable is.
 
 ```sh
-pip install --user betterportablemc[certifi]
+pip install git+https://github.com/kokofixcomputers/portablemc.git
 ```
 
 After that, you can try to show the launcher help message using `portablemc` in your 
