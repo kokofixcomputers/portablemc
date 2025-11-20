@@ -3,7 +3,7 @@ requires = ["poetry_core>=1.2.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "betterportablemc"
+name = "portablemc"
 version = "4.4.2"
 description = "PortableMC is a module that provides both an API for development of your custom launcher and an executable script to run PortableMC CLI."
 authors = ["Théo Rozier <contact@theorozier.fr>", "kokofixcomputers"]
