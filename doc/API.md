@@ -320,6 +320,8 @@ pane)* "App Registrations". Then you should click on "New registration", you can
 the app name, select supported account type, and to finish the redirect URI. This URI is
 where the login page will redirect, with query parameters containing tokens.
 
+If you don't want to register through Azure, you can register through entra.microsoft.com if you have an work or school account and have access.
+
 Once you have the app id, use `MicrosoftAuthSession.get_authentication_url` to get the
 URL of the login page and follow this procedure:
 ```python
