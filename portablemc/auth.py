@@ -220,20 +220,21 @@ class MicrosoftAuthSession(AuthSession):
             return False
 
     def refresh(self):
-        if self._new_username is not None:
-            self.username = self._new_username
-            self._new_username = None
-        else:
-            res = self.authenticate_base({
-                "client_id": self.app_id,
-                "redirect_uri": self.redirect_uri,
-                "refresh_token": self.refresh_token,
-                "grant_type": "refresh_token",
-                "scope": "xboxlive.signin"
-            })
-            self.access_token = res["access_token"]
-            self.username = res["username"]
-            self.uuid = res["uuid"]
+        res = self.authenticate_base({
+            "client_id": self.app_id,
+            "redirect_uri": self.redirect_uri,
+            "refresh_token": self.refresh_token,
+            "grant_type": "refresh_token",
+            "scope": "xboxlive.signin"
+        })
+        self.access_token = res["access_token"]
+        self.username = res["username"]
+        self.uuid = res["uuid"]
+        return {
+            "access_token": self.access_token,
+            "username": self.username,
+            "uuid": self.uuid
+        }
 
     @staticmethod
     def get_authentication_url(app_id: str, redirect_uri: str, email: str, nonce: str):
