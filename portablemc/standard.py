@@ -942,42 +942,19 @@ class Version:
         watcher.handle(JvmLoadedEvent(self._jvm_version, JvmLoadedEvent.MOJANG))
 
     def _resolve_builtin_jvm(self, watcher: Watcher, reason: str, major_version: Optional[int]) -> None:
-        """Internal function to find the builtin Java executable, the reason why this is
-        needed is given in parameter. The expected major version is also given, it should
-        not be none because we cannot check builtin version.
-        """
-
-        if major_version is None:
-            raise JvmNotFoundError(reason)
-
+        """Find a builtin Java executable without enforcing a specific major version."""
+        # Find `java` on PATH
         builtin_path = shutil.which(jvm_bin_filename)
         if builtin_path is None:
+            # Still fail if there is no java at all
             raise JvmNotFoundError(reason)
-        
-        try:
-            
-            # Get version of the JVM.
-            process = Popen([builtin_path, "-version"], bufsize=1, stdout=PIPE, stderr=STDOUT, universal_newlines=True)
-            stdout, _stderr = process.communicate(timeout=1)
-
-            version_start = stdout.index(f"1.{major_version}" if major_version <= 8 else str(major_version))
-            version = None
-            
-            # Parse version by getting all character that are numeric or '.'.
-            for i, ch in enumerate(stdout[version_start:]):
-                if not ch.isnumeric() and ch not in (".", "_"):
-                    version = stdout[version_start:i]
-                    break
-            
-            if version is None:
-                raise ValueError()
-
-        except (TimeoutExpired, ValueError):
-            raise JvmNotFoundError(JvmNotFoundError.BUILTIN_INVALID_VERSION)
-
+    
+        # Just accept this JVM, no `-version` check
         self._jvm_path = Path(builtin_path)
-        self._jvm_version = version
-        watcher.handle(JvmLoadedEvent(version, JvmLoadedEvent.BUILTIN))
+        self._jvm_version = None  # or leave a placeholder string, e.g. "builtin-unknown"
+    
+        watcher.handle(JvmLoadedEvent(self._jvm_version, JvmLoadedEvent.BUILTIN))
+
 
     def _download(self, watcher: Watcher) -> None:
         
