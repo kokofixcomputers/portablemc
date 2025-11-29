@@ -1145,7 +1145,7 @@ class Version:
         if self.resolution is not None:
             env.args_replacements["resolution_width"] = str(self.resolution[0])
             env.args_replacements["resolution_height"] = str(self.resolution[1])
-        env.game_args.extend(after_game_args)
+        env.game_args.extend(env.after_game_args)
         
         return env
 
