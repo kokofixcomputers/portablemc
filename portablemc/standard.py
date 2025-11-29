@@ -183,7 +183,7 @@ class Environment:
         self.context = context
         self.jvm_args: List[str] = []
         self.game_args: List[str] = []
-        se;f.after_game_args: List[str] = []
+        self.after_game_args: List[str] = []
         self.main_class = main_class
         self.args_replacements: Dict[str, str] = {}
         self.native_libs: List[Path] = []
